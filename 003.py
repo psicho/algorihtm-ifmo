@@ -33,8 +33,15 @@ with open("input.txt") as file:
             stru = stru + str(n+1) + ' '
         if i > 1 and s == 0:
             stru = stru + str(n+1) + ' '
-    sort = str(sort).replace('[','').replace(']','').replace("'",'').replace(',','').strip()
+
+    sort1 = ''
+    for i in range(len(sort)):
+        if i == len(sort) - 1:
+            sort1 += str(i)
+        else:
+            sort1 += str(i) + ' '
+
     stru = stru.strip()
 
 with open('output.txt', 'w') as file:
-    file.write(stru + '\n' + sort)
+    file.write(stru + '\n' + sort1)
